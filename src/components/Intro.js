@@ -1,4 +1,5 @@
 import React from "react";
+import CssShape from "./utilities/CssShape";
 
 export default function Intro() {
   return (
@@ -16,8 +17,9 @@ export default function Intro() {
           Get it on Firefox
         </button>
       </div>
-      <div className="flex-1">
-        <img src="/images/illustration-hero.svg"></img>
+      <div className="flex-1 ">
+        <img src="/images/illustration-hero.svg" className="relative"></img>
+        <CssShape />
       </div>
     </div>
   );
