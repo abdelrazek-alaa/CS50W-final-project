@@ -3,3 +3,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.download-p{
+  margin-bottom: 5em !important;
+}

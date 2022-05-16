@@ -40,4 +40,26 @@ export const data = {
       },
     },
   },
+  download: {
+    title: "Download the extension",
+    paragraph:
+      "We’ve got more browsers in the pipeline. Please do let us know if you’ve got a favourite you’d like us to prioritize.",
+    browsers: {
+      chrome: {
+        title: "Add to Firefox",
+        requirement: "Minimum version 55",
+        img: "/images/logo-chrome.svg",
+      },
+      firefox: {
+        title: "Add to Chrome",
+        requirement: "Minimum version 62",
+        img: "/images/logo-firefox.svg",
+      },
+      opera: {
+        title: "Add to Opera",
+        requirement: "Minimum version 46",
+        img: "/images/logo-opera.svg",
+      },
+    },
+  },
 };
