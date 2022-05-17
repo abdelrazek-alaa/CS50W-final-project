@@ -2,6 +2,7 @@ import Intro from "./Intro";
 import Navigation from "./Navigation";
 import Features from "./Features";
 import Download from "./Download";
+import FAQ from "./FAQ";
 function App() {
   return (
     <div className="font-rubik container mx-auto space-y-7 px-3">
@@ -9,6 +10,7 @@ function App() {
       <Intro />
       <Features />
       <Download />
+      <FAQ />
     </div>
   );
 }
