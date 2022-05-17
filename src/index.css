@@ -7,3 +7,14 @@
 .download-p{
   margin-bottom: 5em !important;
 }
+
+.contact{
+  letter-spacing : 0.5em;
+}
+
+@media (max-width: 310px) { 
+  .contact{
+    letter-spacing : initial;
+  }
+  
+ }

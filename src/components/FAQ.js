@@ -7,8 +7,7 @@ const faq = data.faq;
 
 export default function FAQ() {
   return (
-    // Todo remove height
-    <div className="text-center space-y-7 h-96">
+    <div className="text-center space-y-7">
       <h2 className="text-2xl font-medium">{faq.title}</h2>
       <p className="text-grayish-blue xl:mx-80 ">{faq.paragraph}</p>
       {/* Accordion */}
