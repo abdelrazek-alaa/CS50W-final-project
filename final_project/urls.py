@@ -19,7 +19,8 @@ from rest_framework import routers
 from capstone import views
 
 router = routers.DefaultRouter()
-router.register(r'navLinks', views.navLinksViewSet)
+router.register(r'navLinks', views.NavLinksViewSet)
+router.register(r'introSection', views.IntroViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),

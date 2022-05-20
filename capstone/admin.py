@@ -4,8 +4,14 @@ from .models import *
 # Register your models here.
 
 
-class navLinksAdmin(admin.ModelAdmin):
+class NavLinksAdmin(admin.ModelAdmin):
     list_display = ('id', 'name', 'href', 'current')
 
 
-admin.site.register(navLinks, navLinksAdmin)
+class IntroAdmin(admin.ModelAdmin):
+    list_display = ('id', 'title', 'paragraph',
+                    'chromeButton', 'firefoxButton')
+
+
+admin.site.register(NavLinks, NavLinksAdmin)
+admin.site.register(Intro, IntroAdmin)

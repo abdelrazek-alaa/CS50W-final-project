@@ -4,7 +4,7 @@ from django.http import JsonResponse
 from .models import *
 from rest_framework import viewsets
 from rest_framework import permissions
-from .serializers import navLinksSerializer
+from .serializers import *
 
 # Create your views here.
 
@@ -13,10 +13,17 @@ def index(request):
     return HttpResponse('<h1>TODO!</h1>')
 
 
-class navLinksViewSet(viewsets.ModelViewSet):
+class NavLinksViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows nav Links to be viewed
     """
-    queryset = navLinks.objects.all()
-    serializer_class = navLinksSerializer
-    
+    queryset = NavLinks.objects.all()
+    serializer_class = NavLinksSerializer
+
+
+class IntroViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows Intro Section to be viewed and edited
+    """
+    queryset = Intro.objects.all()
+    serializer_class = IntroSerializer

@@ -21,3 +21,7 @@ frontend/.env.production.local
 frontend/npm-debug.log*
 frontend/yarn-debug.log*
 frontend/yarn-error.log*
+/capstone/__pycache__
+/final_project/__pycache__
+/capstone/migrations
+db.sqlite3
