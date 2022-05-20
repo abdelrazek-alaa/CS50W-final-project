@@ -9,13 +9,6 @@ export const data = {
       firefox: "Get it on Firefox",
     },
   },
-  header: {
-    navLinks: [
-      { name: "Features", href: "#", current: false },
-      { name: "Pricing", href: "#", current: false },
-      { name: "Contact", href: "#", current: false },
-    ],
-  },
   features: {
     paragraph:
       "Our aim is to make it quick and easy for you to access your favourite websites. Your bookmarks sync between your devices so you can access them on the go",
