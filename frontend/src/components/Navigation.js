@@ -1,7 +1,6 @@
 import { Fragment, useEffect, useState } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
-import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
-import { data } from "../data";
+import { MenuIcon, XIcon } from "@heroicons/react/outline";
 
 //const navigation = data.header.navLinks;
 
@@ -9,19 +8,8 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Navigation() {
+export default function Navigation({ navigation }) {
   const [loggedIn, setLoggedIn] = useState(false);
-  const [navigation, setNavigation] = useState([
-    { name: "Features", href: "#", current: false },
-    { name: "Pricing", href: "#", current: false },
-    { name: "Contact", href: "#", current: false },
-  ]);
-
-  useEffect(() => {
-    fetch("/navLinks/")
-      .then((res) => res.json())
-      .then((d) => setNavigation(d));
-  }, []);
 
   return (
     <Disclosure as="nav" className="">

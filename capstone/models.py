@@ -12,5 +12,17 @@ class NavLinks(models.Model):
 class Intro(models.Model):
     title = models.CharField(max_length=48)
     paragraph = models.TextField(max_length=200)
-    chromeButton = models.CharField(max_length=25)
-    firefoxButton = models.CharField(max_length=25)
+
+    def __str__(self):
+        return f"{self.title} : {self.paragraph}"
+
+
+class Button(models.Model):
+    intro = models.ForeignKey(
+        Intro, on_delete=models.CASCADE, related_name='buttons')
+    name = models.CharField(max_length=48)
+    url = models.URLField()
+    text = models.CharField(max_length=48)
+
+    def __str__(self):
+        return f"{self.name}"

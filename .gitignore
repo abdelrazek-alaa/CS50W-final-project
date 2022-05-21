@@ -25,3 +25,10 @@ frontend/yarn-error.log*
 /final_project/__pycache__
 /capstone/migrations
 db.sqlite3
+
+# Django #
+*.log
+*.pot
+*.pyc
+__pycache__
+db.sqlite3

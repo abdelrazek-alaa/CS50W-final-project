@@ -9,9 +9,13 @@ class NavLinksAdmin(admin.ModelAdmin):
 
 
 class IntroAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title', 'paragraph',
-                    'chromeButton', 'firefoxButton')
+    list_display = ('id', 'title', 'paragraph')
+
+
+class ButtonAdmin(admin.ModelAdmin):
+    list_display = ('id', 'url', 'text')
 
 
 admin.site.register(NavLinks, NavLinksAdmin)
 admin.site.register(Intro, IntroAdmin)
+admin.site.register(Button, ButtonAdmin)

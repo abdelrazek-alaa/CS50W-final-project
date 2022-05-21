@@ -8,7 +8,15 @@ class NavLinksSerializer(serializers.HyperlinkedModelSerializer):
         fields = ['id', 'name', 'href', 'current']
 
 
+class ButtonSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Button
+        fields = ['name', 'url', 'text']
+
+
 class IntroSerializer(serializers.HyperlinkedModelSerializer):
+    buttons = ButtonSerializer(many=True)
+
     class Meta:
         model = Intro
-        fields = ['id', 'title', 'paragraph', 'chromeButton', 'firefoxButton']
+        fields = ['id', 'title', 'paragraph', 'buttons']

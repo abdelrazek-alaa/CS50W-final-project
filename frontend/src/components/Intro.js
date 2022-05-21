@@ -1,22 +1,7 @@
 import React, { useEffect, useState } from "react";
 import CssShape from "./utilities/CssShape";
-import { data } from "../data";
 
-export default function Intro() {
-  const [intro, setIntro] = useState([
-    {
-      title: "",
-      paragraph: "",
-      chromeButton: "",
-      firefoxButton: "",
-    },
-  ]);
-  useEffect(() => {
-    fetch("/introSection/")
-      .then((res) => res.json())
-      .then((d) => setIntro(d));
-  }, []);
-
+export default function Intro({ intro }) {
   return (
     <div className="flex flex-col-reverse	md:flex-row items-center text-center md:text-left lg:space-y-0 space-y-8">
       <div className="flex-1 space-y-7">
@@ -25,12 +10,18 @@ export default function Intro() {
         </h1>
         <p className="text-grayish-blue lg:pr-40">{intro[0].paragraph}</p>
         <div className="space-y-2">
-          <button className="bg-indigo-500 text-white rounded  py-2 px-3 mr-2">
-            {intro[0].chromeButton}
-          </button>
-          <button className="bg-gray-200 rounded  py-2 px-4 shadow-lg">
-            {intro[0].firefoxButton}
-          </button>
+          {intro[0].buttons.map((button) => (
+            <button
+              key={button.name}
+              className={
+                button.name === "chrome"
+                  ? "bg-indigo-500 text-white rounded  py-2 px-3 mr-2"
+                  : "bg-gray-200 rounded  py-2 px-4 shadow-lg"
+              }
+            >
+              {button.text}
+            </button>
+          ))}
         </div>
       </div>
       <div className="flex-1">
