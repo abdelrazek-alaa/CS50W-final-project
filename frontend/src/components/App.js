@@ -6,7 +6,7 @@ import FAQ from "./FAQ";
 import Contact from "./Contact";
 import Footer from "./Footer";
 import { useEffect, useState } from "react";
-import { RefreshIcon } from "@heroicons/react/outline";
+import Loading from "./Loading";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -35,12 +35,7 @@ function App() {
   return (
     <div>
       {loading ? (
-        <div className="h-screen flex text-very-dark-blue font-mono justify-center">
-          <div className="text-3xl flex flex-col md:flex-row  justify-center items-center space-x-4">
-            <h3>Loading</h3>
-            <RefreshIcon className="h-20 w-20 animate-spin" />
-          </div>
-        </div>
+        <Loading />
       ) : (
         <div className="font-rubik container mx-auto space-y-7 px-3">
           <Navigation navigation={navigation} />
