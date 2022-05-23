@@ -26,3 +26,24 @@ class Button(models.Model):
 
     def __str__(self):
         return f"{self.name}"
+
+
+class FeatureSection(models.Model):
+    title = models.CharField(max_length=48)
+    paragraph = models.TextField(max_length=200)
+
+    def __str__(self):
+        return f"{self.title} : {self.paragraph}"
+
+
+class Feature(models.Model):
+    featureSection = models.ForeignKey(
+        FeatureSection, on_delete=models.CASCADE, related_name='features')
+    name = models.CharField(max_length=48)
+    title = models.CharField(max_length=48)
+    paragraph = models.TextField(max_length=200)
+    img = models.FileField(upload_to='images/', null=True,
+                           blank=True, default=None)
+
+    def __str__(self):
+        return f"{self.name} : {self.title}"

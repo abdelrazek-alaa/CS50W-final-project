@@ -16,6 +16,16 @@ class ButtonAdmin(admin.ModelAdmin):
     list_display = ('id', 'url', 'text')
 
 
+class FeatureSectionAdmin(admin.ModelAdmin):
+    list_display = ('id', 'title', 'paragraph')
+
+
+class FeatureAdmin(admin.ModelAdmin):
+    list_display = ('id', 'name', 'title', 'paragraph', 'img')
+
+
 admin.site.register(NavLinks, NavLinksAdmin)
 admin.site.register(Intro, IntroAdmin)
 admin.site.register(Button, ButtonAdmin)
+admin.site.register(FeatureSection, FeatureSectionAdmin)
+admin.site.register(Feature, FeatureAdmin)

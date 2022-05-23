@@ -11,7 +11,7 @@ class NavLinksSerializer(serializers.HyperlinkedModelSerializer):
 class ButtonSerializer(serializers.ModelSerializer):
     class Meta:
         model = Button
-        fields = ['name', 'url', 'text']
+        fields = ['id', 'name', 'url', 'text']
 
 
 class IntroSerializer(serializers.HyperlinkedModelSerializer):
@@ -20,3 +20,17 @@ class IntroSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Intro
         fields = ['id', 'title', 'paragraph', 'buttons']
+
+
+class FeatureSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Feature
+        fields = ['id', 'name', 'title', 'paragraph', 'img']
+
+
+class FeatureSectionSerializer(serializers.HyperlinkedModelSerializer):
+    features = FeatureSerializer(many=True)
+
+    class Meta:
+        model = FeatureSection
+        fields = ['id', 'title', 'paragraph', 'features']

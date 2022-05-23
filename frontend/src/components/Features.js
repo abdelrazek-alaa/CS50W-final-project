@@ -1,25 +1,23 @@
 import React from "react";
 import { Tab } from "@headlessui/react";
-import { data } from "../data";
+
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Features() {
-  let features = data.features;
-  let categories = data.features.categories;
+export default function Features({ features }) {
   return (
     <div className="text-center space-y-7">
-      <h2 className="text-2xl font-medium">Features</h2>
-      <p className="text-grayish-blue xl:mx-80">{features.paragraph}</p>
+      <h2 className="text-2xl font-medium">{features[0].title}</h2>
+      <p className="text-grayish-blue xl:mx-80">{features[0].paragraph}</p>
 
       {/* tabs */}
       <div className="">
         <Tab.Group>
           <Tab.List className="flex flex-col sm:flex-row space-x-1 rounded-xl bg-indigo-500 p-1 max-w-md mx-auto">
-            {Object.keys(categories).map((category) => (
+            {features[0].features.map((feature) => (
               <Tab
-                key={category}
+                key={feature.name}
                 className={({ selected }) =>
                   classNames(
                     "w-full rounded-lg py-2.5 text-sm font-medium leading-5 text-blue-700",
@@ -30,14 +28,14 @@ export default function Features() {
                   )
                 }
               >
-                {category}
+                {feature.name}
               </Tab>
             ))}
           </Tab.List>
           <Tab.Panels className="mt-2">
-            {Object.values(categories).map((feature, idx) => (
+            {features[0].features.map((feature) => (
               <Tab.Panel
-                key={idx}
+                key={feature.id}
                 className={classNames(
                   "rounded-xl bg-white p-3",
                   "ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2"

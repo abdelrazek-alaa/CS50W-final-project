@@ -12,6 +12,7 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [navigation, setNavigation] = useState();
   const [intro, setIntro] = useState();
+  const [features, setFeatures] = useState();
 
   useEffect(() => {
     Promise.all([
@@ -23,10 +24,15 @@ function App() {
       fetch("/navLinks/")
         .then((res) => res.json())
         .then((data) => data),
+      // index 2 Feature Section
+      fetch("/FeatureSection/")
+        .then((res) => res.json())
+        .then((data) => data),
     ])
       .then((fetchedData) => {
         setIntro(fetchedData[0]);
         setNavigation(fetchedData[1]);
+        setFeatures(fetchedData[2]);
         setLoading(false);
       })
       .catch((error) => console.error(error));
@@ -40,7 +46,7 @@ function App() {
         <div className="font-rubik container mx-auto space-y-7 px-3">
           <Navigation navigation={navigation} />
           <Intro intro={intro} />
-          <Features />
+          <Features features={features} />
           <Download />
           <FAQ />
           <Contact />

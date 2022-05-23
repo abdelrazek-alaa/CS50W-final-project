@@ -27,3 +27,11 @@ class IntroViewSet(viewsets.ModelViewSet):
     """
     queryset = Intro.objects.all()
     serializer_class = IntroSerializer
+
+
+class FeatureSectionViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows Feature Section to be viewed and edited
+    """
+    queryset = FeatureSection.objects.all()
+    serializer_class = FeatureSectionSerializer
