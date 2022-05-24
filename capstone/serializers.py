@@ -19,7 +19,7 @@ class IntroSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Intro
-        fields = ['id', 'title', 'paragraph', 'buttons']
+        fields = ['id', 'title', 'paragraph', 'buttons', 'img']
 
 
 class FeatureSerializer(serializers.ModelSerializer):
@@ -62,3 +62,32 @@ class FaqSectionSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = FaqSection
         fields = ['id', 'title', 'paragraph', 'questions']
+
+
+class NavbarSerializer(serializers.HyperlinkedModelSerializer):
+    links = NavLinksSerializer(many=True)
+
+    class Meta:
+        model = Navbar
+        fields = ['id', 'logo', 'logoMobile', 'links']
+
+
+class SocialLinkSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = SocialLink
+        fields = ['id', 'icon', 'url']
+
+
+class FooterSerializer(serializers.HyperlinkedModelSerializer):
+    links = NavLinksSerializer(many=True)
+    socialLinks = SocialLinkSerializer(many=True)
+
+    class Meta:
+        model = Footer
+        fields = ['id', 'logo', 'links', 'socialLinks']
+
+
+class ContactSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Contact
+        fields = ['id', 'subscribers', 'heading', 'mainButtonText']

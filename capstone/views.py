@@ -13,12 +13,20 @@ def index(request):
     return HttpResponse('<h1>TODO!</h1>')
 
 
-class NavLinksViewSet(viewsets.ModelViewSet):
+class NavbarViewSet(viewsets.ModelViewSet):
     """
-    API endpoint that allows nav Links to be viewed
+    API endpoint that allows navbar to be viewed
     """
-    queryset = NavLinks.objects.all()
-    serializer_class = NavLinksSerializer
+    queryset = Navbar.objects.all()
+    serializer_class = NavbarSerializer
+
+
+class FooterViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows footer to be viewed
+    """
+    queryset = Footer.objects.all()
+    serializer_class = FooterSerializer
 
 
 class IntroViewSet(viewsets.ModelViewSet):
@@ -51,3 +59,11 @@ class FaqSectionViewSet(viewsets.ModelViewSet):
     """
     queryset = FaqSection.objects.all()
     serializer_class = FaqSectionSerializer
+
+
+class ContactViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows Contact Section to be viewed 
+    """
+    queryset = Contact.objects.all()
+    serializer_class = ContactSerializer

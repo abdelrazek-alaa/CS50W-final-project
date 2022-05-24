@@ -40,6 +40,22 @@ class QuestionAdmin(admin.ModelAdmin):
     list_display = ('id', 'question', 'answer')
 
 
+class ContactAdmin(admin.ModelAdmin):
+    list_display = ('id', 'subscribers', 'heading', 'mainButtonText')
+
+
+class SocialLinkAdmin(admin.ModelAdmin):
+    list_display = ('id', 'icon', 'url')
+
+
+class NavbarAdmin(admin.ModelAdmin):
+    list_display = ('id', 'logo')
+
+
+class FooterAdmin(admin.ModelAdmin):
+    list_display = ('id', 'logo')
+
+
 admin.site.register(NavLinks, NavLinksAdmin)
 admin.site.register(Intro, IntroAdmin)
 admin.site.register(Button, ButtonAdmin)
@@ -49,3 +65,7 @@ admin.site.register(DownloadSection, DownloadAdmin)
 admin.site.register(Browser, BrowserAdmin)
 admin.site.register(FaqSection, FaqSectionAdmin)
 admin.site.register(Question, QuestionAdmin)
+admin.site.register(Contact, ContactAdmin)
+admin.site.register(SocialLink, SocialLinkAdmin)
+admin.site.register(Navbar, NavbarAdmin)
+admin.site.register(Footer, FooterAdmin)

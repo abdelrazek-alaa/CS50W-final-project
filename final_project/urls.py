@@ -21,11 +21,13 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 router = routers.DefaultRouter()
-router.register(r'navLinks', views.NavLinksViewSet)
+router.register(r'navbar', views.NavbarViewSet)
 router.register(r'introSection', views.IntroViewSet)
 router.register(r'FeatureSection', views.FeatureSectionViewSet)
 router.register(r'downloadSection', views.DownloadSectionViewSet)
 router.register(r'faqSection', views.FaqSectionViewSet)
+router.register(r'footer', views.FooterViewSet)
+router.register(r'contact', views.ContactViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),

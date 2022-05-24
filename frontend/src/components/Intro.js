@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from "react";
-import CssShape from "./utilities/CssShape";
+import React from "react";
 
 export default function Intro({ intro }) {
+  intro = intro[0];
   return (
     <div className="flex flex-col-reverse	md:flex-row items-center text-center md:text-left lg:space-y-0 space-y-8">
       <div className="flex-1 space-y-7">
         <h1 className="lg:text-5xl sm:text-4xl text-3xl font-medium text-very-dark-blue">
-          {intro[0].title}
+          {intro.title}
         </h1>
-        <p className="text-grayish-blue lg:pr-40">{intro[0].paragraph}</p>
+        <p className="text-grayish-blue lg:pr-40">{intro.paragraph}</p>
         <div className="space-y-2">
-          {intro[0].buttons.map((button) => (
+          {intro.buttons.map((button) => (
             <button
               key={button.name}
               className={
@@ -25,7 +25,7 @@ export default function Intro({ intro }) {
         </div>
       </div>
       <div className="flex-1">
-        <img src="/images/illustration-hero.svg" className=""></img>
+        <img src={intro.img} className=""></img>
       </div>
     </div>
   );

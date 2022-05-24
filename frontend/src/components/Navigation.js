@@ -8,7 +8,7 @@ function classNames(...classes) {
 
 export default function Navigation({ navigation }) {
   const [loggedIn, setLoggedIn] = useState(false);
-
+  navigation = navigation[0];
   return (
     <Disclosure as="nav" className="">
       {({ open }) => (
@@ -31,18 +31,18 @@ export default function Navigation({ navigation }) {
                   {/* in case if there is two logos one for mobile and other for desktop */}
                   <img
                     className="block lg:hidden h-8 w-auto"
-                    src="/images/logo-mobile.svg"
+                    src={navigation.logoMobile}
                     alt="logo"
                   />
                   <img
                     className="hidden lg:block h-8 w-auto"
-                    src="/images/logo-bookmark.svg"
+                    src={navigation.logo}
                     alt="logo"
                   />
                 </div>
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
-                    {navigation.map((item) => (
+                    {navigation.links.map((item) => (
                       <a
                         key={item.name}
                         href={item.href}
@@ -111,7 +111,7 @@ export default function Navigation({ navigation }) {
 
           <Disclosure.Panel className="sm:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              {navigation.map((item) => (
+              {navigation.links.map((item) => (
                 <Disclosure.Button
                   key={item.name}
                   as="a"

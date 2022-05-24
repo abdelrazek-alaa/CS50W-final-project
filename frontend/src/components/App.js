@@ -20,19 +20,25 @@ function App() {
   const [features, setFeatures] = useState();
   const [download, setDownload] = useState();
   const [faq, setFaq] = useState();
+  const [footer, setFooter] = useState();
+  const [contact, setContact] = useState();
 
   useEffect(() => {
     Promise.all([
       // index 0 Intro Section
       fetchData("introSection"),
       // index 1 Nav Section
-      fetchData("navLinks"),
+      fetchData("navbar"),
       // index 2 Feature Section
       fetchData("FeatureSection"),
       // index 3 Download Section
       fetchData("downloadSection"),
       // index 4 FAQ Section
       fetchData("faqSection"),
+      // index 5 Footer Section
+      fetchData("footer"),
+      // index 6 Footer Section
+      fetchData("contact"),
     ])
       .then((fetchedData) => {
         setIntro(fetchedData[0]);
@@ -40,6 +46,8 @@ function App() {
         setFeatures(fetchedData[2]);
         setDownload(fetchedData[3]);
         setFaq(fetchedData[4]);
+        setFooter(fetchedData[5]);
+        setContact(fetchedData[6]);
         setLoading(false);
       })
       .catch((error) => console.error(error));
@@ -56,8 +64,8 @@ function App() {
           <Features features={features} />
           <Download download={download} />
           <FAQ faq={faq} />
-          <Contact />
-          <Footer />
+          <Contact contact={contact} />
+          <Footer footer={footer} />
         </div>
       )}
     </div>
