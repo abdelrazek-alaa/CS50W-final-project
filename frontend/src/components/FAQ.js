@@ -1,11 +1,9 @@
 import React from "react";
-import { data } from "../data";
 import { Disclosure, Transition } from "@headlessui/react";
 import { ChevronUpIcon } from "@heroicons/react/solid";
 
-const faq = data.faq;
-
-export default function FAQ() {
+export default function FAQ({ faq }) {
+  faq = faq[0];
   return (
     <div className="text-center space-y-7">
       <h2 className="text-2xl font-medium">{faq.title}</h2>
@@ -14,12 +12,12 @@ export default function FAQ() {
       <div className="w-full px-4">
         <div className="mx-auto w-full max-w-md rounded-2xl bg-white p-2 space-y-1">
           {faq.questions.map((question) => (
-            <div key={question.q}>
+            <div key={question.id}>
               <Disclosure>
                 {({ open }) => (
                   <>
                     <Disclosure.Button className="flex w-full justify-between rounded-lg bg-indigo-100 px-4 py-2 text-left text-sm font-medium  text-very-dark-blue hover:bg-indigo-200 focus:outline-none focus-visible:ring focus-visible:ring-indigo-500 focus-visible:ring-opacity-75">
-                      <span>{question.q}</span>
+                      <span>{question.question}</span>
                       <ChevronUpIcon
                         className={`${
                           open ? "rotate-180 transform" : ""
@@ -35,7 +33,7 @@ export default function FAQ() {
                       leaveTo="transform scale-95 opacity-0"
                     >
                       <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-500">
-                        {question.a}
+                        {question.answer}
                       </Disclosure.Panel>
                     </Transition>
                   </>

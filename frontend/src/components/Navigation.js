@@ -1,8 +1,6 @@
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useState } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
-
-//const navigation = data.header.navLinks;
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");

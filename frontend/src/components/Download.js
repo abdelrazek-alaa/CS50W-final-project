@@ -1,8 +1,7 @@
 import React from "react";
-import { data } from "../data";
 
-const download = data.download;
-export default function Download() {
+export default function Download({ download }) {
+  download = download[0];
   return (
     <div className="text-center space-y-7 ">
       <h2 className="text-2xl font-medium">{download.title}</h2>
@@ -11,22 +10,14 @@ export default function Download() {
       </p>
       {/* Browsers */}
       <div className="flex md:justify-center flex-col	md:flex-row space-y-20 md:space-y-0">
-        {Object.keys(download.browsers).map((browser) => (
+        {download.browsers.map((browser) => (
           <div
-            key={download.browsers[browser].title}
+            key={browser.name}
             className="max-w-xs mx-auto md:mx-0 shadow-lg space-y-7 md:mr-2"
           >
-            <img
-              src={download.browsers[browser].img}
-              alt="browser icon"
-              className="mx-auto"
-            />
-            <h2 className="text-2xl font-medium">
-              {download.browsers[browser].title}
-            </h2>
-            <p className="text-grayish-blue">
-              {download.browsers[browser].requirement}
-            </p>
+            <img src={browser.img} alt="browser icon" className="mx-auto" />
+            <h2 className="text-2xl font-medium">{browser.title}</h2>
+            <p className="text-grayish-blue">{browser.minimumVersion}</p>
             <img
               src="/images/bg-dots.svg"
               alt="cosmetic element"

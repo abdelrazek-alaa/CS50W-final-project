@@ -52,7 +52,7 @@ class DownloadSectionSerializer(serializers.HyperlinkedModelSerializer):
 
 class QuestionSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Browser
+        model = Question
         fields = ['id', 'question', 'answer']
 
 
