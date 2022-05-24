@@ -24,6 +24,8 @@ router = routers.DefaultRouter()
 router.register(r'navLinks', views.NavLinksViewSet)
 router.register(r'introSection', views.IntroViewSet)
 router.register(r'FeatureSection', views.FeatureSectionViewSet)
+router.register(r'downloadSection', views.DownloadSectionViewSet)
+router.register(r'faqSection', views.FaqSectionViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),

@@ -24,8 +24,18 @@ class FeatureAdmin(admin.ModelAdmin):
     list_display = ('id', 'name', 'title', 'paragraph', 'img')
 
 
+class DownloadAdmin(admin.ModelAdmin):
+    list_display = ('id', 'title', 'paragraph')
+
+
+class BrowserAdmin(admin.ModelAdmin):
+    list_display = ('id', 'name', 'title', 'minimumVersion', 'img')
+
+
 admin.site.register(NavLinks, NavLinksAdmin)
 admin.site.register(Intro, IntroAdmin)
 admin.site.register(Button, ButtonAdmin)
 admin.site.register(FeatureSection, FeatureSectionAdmin)
 admin.site.register(Feature, FeatureAdmin)
+admin.site.register(DownloadSection, DownloadAdmin)
+admin.site.register(Browser, BrowserAdmin)

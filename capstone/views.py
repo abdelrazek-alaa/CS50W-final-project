@@ -35,3 +35,19 @@ class FeatureSectionViewSet(viewsets.ModelViewSet):
     """
     queryset = FeatureSection.objects.all()
     serializer_class = FeatureSectionSerializer
+
+
+class DownloadSectionViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows Download Section to be viewed and edited
+    """
+    queryset = DownloadSection.objects.all()
+    serializer_class = DownloadSectionSerializer
+
+
+class FaqSectionViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows FAQ Section to be viewed and edited
+    """
+    queryset = FaqSection.objects.all()
+    serializer_class = FaqSectionSerializer

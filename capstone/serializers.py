@@ -34,3 +34,31 @@ class FeatureSectionSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = FeatureSection
         fields = ['id', 'title', 'paragraph', 'features']
+
+
+class BrowserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Browser
+        fields = ['id', 'name', 'title', 'minimumVersion', 'img']
+
+
+class DownloadSectionSerializer(serializers.HyperlinkedModelSerializer):
+    browsers = BrowserSerializer(many=True)
+
+    class Meta:
+        model = DownloadSection
+        fields = ['id', 'title', 'paragraph', 'browsers']
+
+
+class QuestionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Browser
+        fields = ['id', 'question', 'answer']
+
+
+class FaqSectionSerializer(serializers.HyperlinkedModelSerializer):
+    questions = QuestionSerializer(many=True)
+
+    class Meta:
+        model = FaqSection
+        fields = ['id', 'title', 'paragraph', 'questions']

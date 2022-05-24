@@ -47,3 +47,39 @@ class Feature(models.Model):
 
     def __str__(self):
         return f"{self.name} : {self.title}"
+
+
+class DownloadSection(models.Model):
+    title = models.CharField(max_length=48)
+    paragraph = models.TextField(max_length=200)
+
+    def __str__(self):
+        return f"{self.title} : {self.paragraph}"
+
+
+class Browser(models.Model):
+    downloadSection = models.ForeignKey(
+        DownloadSection, on_delete=models.CASCADE, related_name='browsers')
+    name = models.CharField(max_length=48)
+    title = models.CharField(max_length=48)
+    minimumVersion = models.TextField(max_length=200)
+    img = models.FileField(upload_to='images/', null=True,
+                           blank=True, default=None)
+
+    def __str__(self):
+        return f"{self.name} : {self.title}"
+
+
+class FaqSection(models.Model):
+    title = models.CharField(max_length=48)
+    paragraph = models.TextField(max_length=200)
+
+    def __str__(self):
+        return f"{self.title} : {self.paragraph}"
+
+
+class Question(models.Model):
+    faqSection = models.ForeignKey(
+        FaqSection, on_delete=models.CASCADE, related_name='questions')
+    question = models.CharField(max_length=150)
+    answer = models.TextField(max_length=200)
