@@ -4,7 +4,9 @@ export default function Download({ download }) {
   download = download[0];
   return (
     <div className="text-center space-y-7 ">
-      <h2 className="text-2xl font-medium">{download.title}</h2>
+      <h2 className="text-3xl font-medium text-very-dark-blue">
+        {download.title}
+      </h2>
       <p className="text-grayish-blue xl:mx-80 download-p">
         {download.paragraph}
       </p>
@@ -13,7 +15,7 @@ export default function Download({ download }) {
         {download.browsers.map((browser) => (
           <div
             key={browser.name}
-            className="max-w-xs mx-auto md:mx-0 shadow-lg space-y-7 md:mr-2"
+            className="max-w-xs mx-auto md:mx-0 shadow-xl space-y-7 md:mr-2 p-5"
           >
             <img src={browser.img} alt="browser icon" className="mx-auto" />
             <h2 className="text-2xl font-medium">{browser.title}</h2>

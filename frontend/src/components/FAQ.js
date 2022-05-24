@@ -6,7 +6,7 @@ export default function FAQ({ faq }) {
   faq = faq[0];
   return (
     <div className="text-center space-y-7">
-      <h2 className="text-2xl font-medium">{faq.title}</h2>
+      <h2 className="text-3xl font-medium">{faq.title}</h2>
       <p className="text-grayish-blue xl:mx-80 ">{faq.paragraph}</p>
       {/* Accordion */}
       <div className="w-full px-4">

@@ -3,12 +3,12 @@ import React from "react";
 export default function Intro({ intro }) {
   intro = intro[0];
   return (
-    <div className="flex flex-col-reverse	md:flex-row items-center text-center md:text-left lg:space-y-0 space-y-8">
+    <div className="flex flex-col-reverse	md:flex-row items-center text-center md:text-left lg:space-y-0 space-y-8 md:mt-28">
       <div className="flex-1 space-y-7">
-        <h1 className="lg:text-5xl sm:text-4xl text-3xl font-medium text-very-dark-blue">
+        <h1 className="lg:text-5xl text-4xl font-medium text-very-dark-blue">
           {intro.title}
         </h1>
-        <p className="text-grayish-blue lg:pr-40">{intro.paragraph}</p>
+        <p className="text-grayish-blue lg:max-w-md">{intro.paragraph}</p>
         <div className="space-y-2">
           {intro.buttons.map((button) => (
             <button

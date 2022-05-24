@@ -7,14 +7,18 @@ function classNames(...classes) {
 
 export default function Features({ features }) {
   return (
-    <div className="text-center space-y-7">
-      <h2 className="text-2xl font-medium">{features[0].title}</h2>
-      <p className="text-grayish-blue xl:mx-80">{features[0].paragraph}</p>
+    <div className="text-center space-y-8">
+      <h2 className="text-4xl font-medium text-very-dark-blue">
+        {features[0].title}
+      </h2>
+      <p className="text-grayish-blue lg:max-w-lg lg:mx-auto">
+        {features[0].paragraph}
+      </p>
 
       {/* tabs */}
       <div className="">
         <Tab.Group>
-          <Tab.List className="flex flex-col sm:flex-row space-x-1 rounded-xl bg-indigo-500 p-1 max-w-md mx-auto">
+          <Tab.List className="flex flex-col sm:flex-row space-x-1 rounded-xl bg-indigo-500 p-1 max-w-lg mx-auto">
             {features[0].features.map((feature) => (
               <Tab
                 key={feature.name}
@@ -32,7 +36,7 @@ export default function Features({ features }) {
               </Tab>
             ))}
           </Tab.List>
-          <Tab.Panels className="mt-2">
+          <Tab.Panels className="mt-8">
             {features[0].features.map((feature) => (
               <Tab.Panel
                 key={feature.id}
@@ -43,7 +47,11 @@ export default function Features({ features }) {
               >
                 <div className="flex flex-col	md:flex-row items-center space-y-7 max-w-5xl	mx-auto space-x-5">
                   <div className="flex-1">
-                    <img src={feature.img} alt="feature img" className="" />
+                    <img
+                      src={feature.img}
+                      alt="feature img"
+                      className="m-auto md:max-h-60"
+                    />
                   </div>
                   <div className="space-y-7  flex-1 lg:text-left">
                     <h3 className="lg:text-4xl sm:text-3xl text-2xl font-medium text-very-dark-blue">

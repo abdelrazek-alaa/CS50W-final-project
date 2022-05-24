@@ -58,14 +58,16 @@ function App() {
       {loading ? (
         <Loading />
       ) : (
-        <div className="font-rubik container mx-auto space-y-7 px-3">
+        <div className="font-rubik container mx-auto px-3">
           <Navigation navigation={navigation} />
-          <Intro intro={intro} />
-          <Features features={features} />
-          <Download download={download} />
-          <FAQ faq={faq} />
-          <Contact contact={contact} />
-          <Footer footer={footer} />
+          <div className="space-y-40">
+            <Intro intro={intro} />
+            <Features features={features} />
+            <Download download={download} />
+            <FAQ faq={faq} />
+            <Contact contact={contact} />
+            <Footer footer={footer} />
+          </div>
         </div>
       )}
     </div>
