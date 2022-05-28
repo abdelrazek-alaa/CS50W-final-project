@@ -35,7 +35,7 @@ class Intro(models.Model):
                            blank=True, default=None)
 
     def __str__(self):
-        return f"{self.title} : {self.paragraph}"
+        return f"{self.title}"
 
 
 class Button(models.Model):
@@ -75,7 +75,7 @@ class DownloadSection(models.Model):
     paragraph = models.TextField(max_length=200)
 
     def __str__(self):
-        return f"{self.title} : {self.paragraph}"
+        return f"{self.title}"
 
 
 class Browser(models.Model):
@@ -96,7 +96,7 @@ class FaqSection(models.Model):
     paragraph = models.TextField(max_length=200)
 
     def __str__(self):
-        return f"{self.title} : {self.paragraph}"
+        return f"{self.title}"
 
 
 class Question(models.Model):
